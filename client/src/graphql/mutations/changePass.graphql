@@ -1,0 +1,27 @@
+mutation ChangePassword(
+  $token: String!
+  $userId: String!
+  $changePasswordInput: ChangePasswordInput!
+) {
+  changePassword(
+    token: $token
+    userId: $userId
+    changePasswordInput: $changePasswordInput
+  ) {
+    code
+    success
+    message
+    user {
+      id
+      username
+      email
+      password
+      createdAt
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

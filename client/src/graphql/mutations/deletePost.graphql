@@ -1,0 +1,21 @@
+mutation DeletePost($id: ID!) {
+  deletePost(id: $id) {
+    code
+    success
+    message
+    post {
+      text
+      title
+      id
+      createdAt
+      updatedAt
+      user {
+        username
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}
